@@ -1,0 +1,84 @@
+// Default styles
+.container {
+  width: 100%;
+  max-width: 100%;
+  @include padding(left, 0.938);
+  @include padding(right, 0.938);
+  @include m-auto();
+  box-sizing: border-box;
+
+  @include media(">=lg") {
+    width: 73.125rem;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+::selection {
+  @include set-background(color(primary));
+}
+
+.text-center {
+  @include text(center);
+}
+
+.align-center {
+  @include align-center();
+}
+
+hr {
+  @include line();
+}
+
+.success {
+  color: color(success);
+}
+.danger {
+  color: color(error);
+}
+.warning {
+  color: color(warning);
+}
+.underline {
+  text-decoration: underline;
+}
+
+.bg-dark {
+  @include set-background(color(black));
+}
+.bg-light {
+  @include set-background(color(bg-light));
+}
+.bg-white {
+  @include set-background(color(white));
+}
+.bg-secondary {
+  @include set-background(color(secondary));
+}
+.bg-accent {
+  @include set-background(color(accent));
+}
+
+/*.....scroll to top
+......................*/
+.scrollup {
+  @include set-background(color(bg));
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  padding: 0.25rem;
+  z-index: 2;
+  display: none;
+
+  i {
+    padding: 0;
+  }
+}

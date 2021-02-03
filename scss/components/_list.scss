@@ -1,0 +1,64 @@
+li {
+  ul {
+    @include margin(top, 1);
+  }
+}
+//order list
+.order_list {
+  list-style: none;
+  counter-reset: my-counter;
+
+  li {
+    counter-increment: my-counter;
+    @include margin(bottom, 0.5);
+    @include padding(left, 1);
+
+    &::before {
+      content: counter(my-counter) ". ";
+      color: color(secondary);
+    }
+  }
+}
+
+//unorder list
+.unorder_list {
+  list-style: disc;
+  @include margin(left, 1.75);
+
+  li {
+    @include margin(bottom, 0.5);
+    @include padding(left, 0);
+  }
+  ul {
+    list-style: circle;
+  }
+}
+
+//check list
+.check_list {
+  li {
+    position: relative;
+    @include padding(left, 2);
+    @include margin(bottom, 0.75);
+    @include font-size($fs-base);
+
+    &:before {
+      content: "\f058";
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: $primary;
+      font-size: 1.25rem;
+      font-weight: weight(regualr);
+    }
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (-o-min-device-pixel-ratio: 1.25/1),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 200dpi),
+  only screen and (min-resolution: 1.25dppx) {
+}

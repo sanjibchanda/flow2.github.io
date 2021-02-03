@@ -1,0 +1,272 @@
+/*....hero section
+...........................*/
+.section_hero {
+  padding: 5rem 0 0;
+  background: bg("hero-bg.png") no-repeat center top color(white);
+  background-size: cover;
+
+  @include media(">=md") {
+    padding: 8.5rem 0 5rem;
+  }
+
+  &_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+
+    @include media(">=md") {
+      flex-direction: row;
+    }
+
+    & > * {
+      width: 100%;
+      @include media(">=xl") {
+        width: auto;
+      }
+    }
+
+    .hero_content {
+      @include margin(top, 3.5);
+      text-align: center;
+
+      @include media(">=xl") {
+        flex-basis: 40%;
+        text-align: left;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        color: color(white);
+      }
+      .btn {
+        @include margin(top, 2.25);
+      }
+    }
+
+    .hero_img {
+      text-align: center;
+      img {
+        width: 360px;
+        @include media(">=md") {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+/*....work section
+...........................*/
+.section_work {
+  padding: 3.25rem 0 3rem;
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &_wrap {
+    .work_box {
+      @include margin(top, 1.5);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-gap: 1rem;
+
+      @include media(">=sm") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media(">=lg") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .box_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+        @include bd-radius(0.25rem);
+        transition: all ease 0.5s;
+
+        .icon-hover {
+          display: none;
+        }
+        &:hover {
+          background: darken(color(bg-light), 10%);
+          transition: all ease 0.5s;
+          .icon {
+            display: none;
+          }
+          .icon-hover {
+            display: block;
+          }
+        }
+
+        p {
+          @include margin(top, 1.125);
+        }
+      }
+    }
+  }
+}
+
+/*....feature section
+...........................*/
+.section_feature {
+  padding: 5rem 0 4rem;
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: color(secondary);
+    position: relative;
+
+    span {
+      background: color(white);
+      z-index: 1;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      background: bg("line-left.svg") no-repeat;
+      width: 13.75rem;
+      height: 1.75rem;
+      transform: translateY(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      background: bg("line-right.svg") no-repeat;
+      width: 13.75rem;
+      height: 1.75rem;
+      transform: translateY(-50%);
+    }
+  }
+  p {
+    text-align: center;
+    font-size: 1rem;
+    @include margin(top, 1);
+  }
+
+  &_wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 1.75rem;
+    text-align: center;
+    @include margin(top, 4);
+
+    img {
+      @include margin(bottom, 1.25);
+    }
+  }
+}
+
+/*....get section
+...........................*/
+.section_get {
+  padding: 6.5rem 0;
+
+  &_wrap {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 3rem;
+
+    .get_box {
+      @include content-gap();
+
+      h2 {
+        color: color(secondary);
+        text-transform: uppercase;
+      }
+      p {
+        font-weight: weight(medium);
+        @include margin(top, 1.5);
+      }
+      .btn-secondary {
+        @include margin(top, 1);
+      }
+    }
+  }
+}
+
+/*....flow section
+...........................*/
+.flow_wrapper {
+  padding: 4.5rem 0;
+  h2 {
+    position: relative;
+
+    span {
+      background: color(white);
+      z-index: 1;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 15%;
+      top: 50%;
+      background: bg("line-left.svg") no-repeat;
+      width: 13.75rem;
+      height: 1.75rem;
+      transform: translateY(-50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      background: bg("line-right.svg") no-repeat;
+      width: 13.75rem;
+      height: 1.75rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  h4 {
+    color: color(secondary);
+  }
+}
+
+/*....gauges section
+...........................*/
+.gauges_wrapper {
+  padding: 4.5rem 0px 2.5rem;
+  h2 {
+    color: color(accent);
+  }
+}
+
+/*....dashboard section
+...........................*/
+.dashboard_wrapper {
+  p {
+    color: color(accent-light);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (-o-min-device-pixel-ratio: 1.25/1),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 200dpi),
+  only screen and (min-resolution: 1.25dppx) {
+}

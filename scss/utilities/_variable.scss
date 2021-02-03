@@ -1,0 +1,102 @@
+// Color theme
+
+$primary: #14181b !default;
+$secondary: #e96823 !default;
+$success: #28a745 !default;
+$error: #dc3545 !default;
+$warning: #ffc107 !default;
+$info: #17a2b8 !default;
+$light: #f8f9fa !default;
+$dark: #141415 !default;
+$muted: #6c757d !default;
+$white: #fff !default;
+$black: #000 !default;
+
+$accent: #14181b !default;
+$accent-light: #93989c !default;
+$border: #e1e1e1 !default;
+$border-light: #dee2e6 !default;
+$border-dark: #333 !default;
+
+// Links
+$link-color: $secondary !default;
+$link-hover-color: $secondary !default;
+
+//background
+$bg: #161610 !default;
+$bg-light: #eff3f6 !default;
+$bg-dark: #222222 !default;
+
+//user changes theme colors:
+$color: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  error: $error,
+  warning: $warning,
+  info: $info,
+  light: $light,
+  dark: $dark,
+  muted: $muted,
+  white: $white,
+  black: $black,
+  accent: $accent,
+  accent-light: $accent-light,
+  link: $link-color,
+  link-hover: $link-hover-color,
+  border: $border,
+  border-light: $border-light,
+  border-dark: $border-dark,
+  bg: $bg,
+  bg-light: $bg-light,
+  bg-dark: $bg-dark,
+) !default;
+
+// font-family
+
+$ff-base: "Poppins", sans-serif;
+$ff-heading: "Poppins", sans-serif;
+
+// Typography
+
+$spacer: 5rem;
+$fs-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$lh-base: 1.6 !default;
+$lh-heading: 1.2 !default;
+
+$h1: $fs-base * 2.5 !default;
+$h2: $fs-base * 2 !default;
+$h3: $fs-base * 1.75 !default;
+$h4: $fs-base * 1.5 !default;
+$h5: $fs-base * 1.25 !default;
+$h6: $fs-base !default;
+$fs-sm: $fs-base * 0.875 !default;
+$fs-xs: $fs-base * 0.75 !default;
+
+// font-weight
+$weight: (
+  thin: 100,
+  exlight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  smbold: 600,
+  bold: 700,
+  exbold: 800,
+  black: 900,
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes
+);

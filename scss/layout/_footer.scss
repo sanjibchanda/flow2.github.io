@@ -1,0 +1,51 @@
+/*....footer section
+...........................*/
+.section_footer {
+  padding: 3rem 0;
+
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+
+    .content {
+      p {
+        font-size: $fs-sm;
+        @include margin(top, 0.5);
+      }
+      .mark {
+        color: color(secondary);
+      }
+      .logo_box {
+        display: flex;
+
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5rem;
+
+        img {
+          @include border(right, 1px, color(secondary));
+          @include padding(right, 1.5);
+        }
+
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          li + li {
+            @include margin(left, 0.75);
+          }
+        }
+      }
+    }
+
+    .btn-secondary {
+      @include hover-focus-active {
+        border: 2px solid color(secondary);
+        color: color(secondary);
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/*....content section
+...........................*/
+.section_content {
+  padding: 4.5rem 0 6.5rem;
+
+  h2 {
+    text-transform: uppercase;
+    color: color(secondary);
+  }
+
+  &_wrap {
+    @include margin(top, 2.5);
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 2rem 0;
+    grid-template-areas:
+      "content1"
+      "content2"
+      "card";
+    @include media(">=sm") {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+      grid-template-areas:
+        "content1 content2"
+        "card card";
+    }
+    @include media(">=xl") {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+      grid-template-areas: "content1 card card content2";
+    }
+
+    .span2 {
+      grid-column: span 2;
+    }
+
+    & > div {
+      ul {
+        li + li {
+          @include margin(top, 2);
+        }
+        li {
+          @include content-gap();
+
+          p {
+            line-height: 1.4;
+            font-size: $fs-base;
+          }
+        }
+      }
+    }
+    .content1 {
+      grid-area: content1;
+    }
+    .card {
+      grid-area: card;
+      text-align: center;
+    }
+    .content2 {
+      grid-area: content2;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+%btn {
+  width: auto;
+  display: inline-block;
+  font-size: 1.125rem;
+  line-height: 1;
+  padding: 0.875em 1.5em;
+  text-align: center;
+  box-shadow: none;
+  border: 2px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include bd-radius(0);
+
+  @include hover-focus-active {
+    @include set-background(color(primary));
+  }
+}
+%btn-light {
+  @extend %btn;
+  border: 2px solid color(primary);
+  text-decoration: none;
+}
+%btn-dark {
+  @extend %btn;
+  @include set-background(color(dark));
+  text-decoration: none;
+}
+.btn-sm {
+  @extend %btn;
+  font-size: $fs-sm;
+  padding: 0.75rem 2rem;
+  text-transform: uppercase;
+}
+.btn-primary {
+  @extend %btn;
+  @include set-background(color(primary));
+  @include bd-radius(0.5rem);
+  font-weight: weight(bold);
+  border: 2px solid color(secondary);
+  color: color(secondary);
+}
+.btn-secondary {
+  @extend %btn;
+  @include set-background(color(secondary));
+  font-weight: weight(bold);
+
+  img {
+    @include padding(left, 2);
+  }
+}
